@@ -112,7 +112,7 @@ print("Investment of €" + str(decimalFormat2.format(investment)) + " leads to 
 while remCosts > 0:
     years += 1
     if subsidy > 0:
-        remCosts = remCosts - (earnings / 100) - yearlySubsidy
+        remCosts -= (earnings / 100) - yearlySubsidy
         if remCosts < 0:
             if years <= 1:
                 print("PV system amortized within a year. ")
@@ -122,7 +122,7 @@ while remCosts > 0:
         print("After year " + str(years) + ": €" + str(decimalFormat2.format(remCosts)) + " still to compensate (€" +
               str(decimalFormat2.format(yearlySubsidy)) + " paid by the government). ")
     else:
-        remCosts = remCosts - (earnings / 100)
+        remCosts -= (earnings / 100)
         if remCosts < 0:
             if years <= 1:
                 print("PV system amortized within a year. ")
